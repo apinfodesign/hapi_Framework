@@ -4,15 +4,14 @@ Implementing a Hapi.js framework
 
 The project exercises various CRUD methods...
 
-1 Get resource at root path
+1 Server html page from root
 2 Return any user string entered on /echo/ path.
 3 Get a list of resources from an array that is used to represent a file system just for this exercise.
 4 Put resource (add an object to the array via the api)
 5 Get a specific element when it is indicated by number
-6 Return an eror message if requested resource does not exist
+6 Return an error message if requested resource does not exist
 
 These features are tested by 7 mocha tests
-    it('responds with welcome message on root path',
     it('returns user string on /echo/',
     it('returns 3 item length list when new',
     it('adds one file resource to existing array',

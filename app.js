@@ -1,5 +1,6 @@
 'use strict';
 const Hapi = require('hapi');
+const inert = require('inert');
 
 // Create a server with a host and port
 var server  = new Hapi.Server();
@@ -21,14 +22,22 @@ function modifyDataArray(arrayElement, addDelete){
     return dataArray;
 };
 
-// top level domain response PASS
-server.route({
-    method: 'GET',
-    path:'/',
-    handler: function (request, reply) {
-        return reply('hello world - this is a hapi framework');
+
+
+server.register(inert, function(err){
+    if (err) {
+        throw err;
     }
+    server.route({
+        method: 'GET',
+        path: '/',
+        handler: function (request, reply) {
+            reply.file('./index2.html');
+        }
+    });
 });
+
+
 
 //echo user input PASS
 server.route({
@@ -80,6 +89,14 @@ server.route({
         }
     }
 });
+
+
+
+
+
+
+
+
 
 server.dataArray = dataArray;
 var app = server;

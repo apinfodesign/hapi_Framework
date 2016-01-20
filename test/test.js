@@ -21,16 +21,6 @@ describe('basic Express server... ', function() {
     })
 
 
-    it('responds with welcome message on root path', function(done) {
-        chai.request(url)
-            .get('/')
-            .end(function(err, res){
-                expect(err).to.be.null;
-                expect(res.text).to.equal(welcomeMessage);
-                done();
-            });
-    });
-
 
     it('returns user string on /echo/', function(done){
         chai.request(url)

@@ -2,7 +2,8 @@
   "name": "otherframework",
   "version": "0.1.0",
   "dependencies": {
-    "hapi": "^12.1.0"
+    "hapi": "^12.1.0",
+    "inert": "^3.2.0"
   },
   "private": true,
   "description": "not express... with mocha testing",
