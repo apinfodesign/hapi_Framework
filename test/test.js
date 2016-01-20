@@ -21,6 +21,19 @@ describe('basic Express server... ', function() {
     })
 
 
+    it('returns index.html file on /', function(done){
+        chai.request(url)
+            .get('/')
+            .end(function(err, response){
+                expect(err).to.be.null;
+                console.log(response.text);
+                assert.equal(
+                    response.text.substring(0,10), "<!DOCTYPE html>".substring(0,10)
+                )
+                done();
+            });
+    });
+
 
     it('returns user string on /echo/', function(done){
         chai.request(url)
